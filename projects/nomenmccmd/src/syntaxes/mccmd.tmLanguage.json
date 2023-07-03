@@ -1,0 +1,107 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "mccmd",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#commands"
+		},
+		{
+			"include": "#commandSlash"
+		},
+		{
+			"include": "#entitySelector"
+		},
+		{
+			"include": "#entitySelector-key"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#boolean"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.mccmd",
+					"match": "\\b(if|while|for|return)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.mccmd",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mccmd",
+					"match": "\\\\."
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.name"
+				}
+			]
+		},
+		"commands": {
+			"patterns": [
+				{
+					"name": "entity.name.function",
+					"match": "(?<=^|\\/)(?!\\b(true|false)\\b)(\\b\\w+\\b)(?=\\s|$)"
+				}
+			]
+		},
+		"commandSlash": {
+			"patterns": [
+				{
+					"name": "constant.regexp",
+					"match": "/\\b(?=[a-zA-Z])\\b"
+				}
+			]
+		},
+		"entitySelector":{
+			"patterns": [
+				{
+					"name":"storage",
+					"match": "@(?:[eprsa]|c|v|initiator)"
+				}
+			]
+		},
+		"entitySelector-key":{
+			"patterns": [
+				{
+					"name":"storage.type.java",
+					"match": "\\b\\w+(?=\\s*=)"
+				}
+			]
+		},
+		"number":{
+			"patterns": [
+				{
+					"name":"support.type.property-name.css",
+					"match": "\\d+"
+				}
+			]
+		},
+		"boolean":{
+			"patterns": [
+				{
+					"name":"keyword",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.mccmd"
+}
