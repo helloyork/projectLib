@@ -8,3 +8,4 @@ Based on the Box3 game platform
 
 Includes: tutorial source code, database management tools, data processing modules and lots of template code.
 
+> ! Warning: please do not copy this code privately and then **post it on the public network**! This is a violation of others' rights. This repository is for learning and reference only. If you want to contribute, feel free to mention **issue** or **pull**
